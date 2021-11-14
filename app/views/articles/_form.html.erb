@@ -1,0 +1,29 @@
+<div>
+  <div>
+    <div>
+      <%= render 'shared/errors', obj: @article %>
+      <%= form_with(model: @article, local: true) do |f| %>
+        <div>
+          <%= f.label :title %>
+          <div>
+            <%= f.text_field :title, placeholder: "Title of article" %>
+          </div>
+        </div>
+
+        <div>
+          <%= f.label :description %>
+          <div class="col-10"> 
+            <%= f.text_area :description, rows: 10, placeholder: "Description of article" %>
+          </div>
+        </div>
+
+        <div>
+          <%= f.submit %>
+        </div>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to 'Cancel and return to articles listing', articles_path %>
+    </div>
+  </div>
+</div>
