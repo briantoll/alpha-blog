@@ -11,14 +11,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <header>
-      <nav>
-        <code><%= link_to 'ALPHA BLOG', root_path %></code>
-        <%= link_to 'Posts', articles_path %>
-        <%= link_to 'About', about_path %>
-      </nav>
-    </header>
+    <%= render 'layouts/header' %>
     <%= render 'layouts/messages' %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
