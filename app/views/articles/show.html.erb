@@ -2,7 +2,8 @@
 <p><%= @article.description %></p>
 <p>
   <small>Updated <%= time_ago_in_words(@article.updated_at) %> ago</small><br>
-  <small>Created: <%= @article.created_at %></small>
+  <small>Created: <%= @article.created_at %></small><br>
+  <small>By: <%= @article.user_id %></small>
 </p>
 <p>
   <span><%= link_to 'Return', articles_path %></span> | 
