@@ -1,9 +1,10 @@
 <h1><%= @article.title %></h1>
+<small>By: <%= link_to @article.user.username, 'mailto:' + @article.user.email %></small>
 <p><%= @article.description %></p>
 <p>
   <small>Updated <%= time_ago_in_words(@article.updated_at) %> ago</small><br>
   <small>Created: <%= @article.created_at %></small><br>
-  <small>By: <%= @article.user.username %></small>
+  
 </p>
 <p>
   <span><%= link_to 'Return', articles_path %></span> | 
