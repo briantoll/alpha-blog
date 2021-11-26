@@ -1,7 +1,7 @@
-<% if @article.errors.any? %>
-  <p><b>The following errors prevented the article from being saved</b></p>
+<% if obj.errors.any? %>
+  <p><b>The following errors prevented the <%= obj.class.name.downcase %> from being saved</b></p>
   <ul>
-    <% @article.errors.full_messages.each do |msg| %>
+    <% obj.errors.full_messages.each do |msg| %>
       <li><mark><%= msg %></mark></li>
     <% end %>
   </ul>
