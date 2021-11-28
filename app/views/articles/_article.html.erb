@@ -1,0 +1,14 @@
+<% @articles.each do |article| %>
+  <div>
+    <h2><%= article.title %></h2>
+    <p><%= article.description %></p>
+    <small>Updated <%= time_ago_in_words(article.updated_at) %> ago</small><br>
+    <small>Created: <%= article.created_at %></small>
+    <p>
+      <span><%= link_to 'View', article_path(article) %></span> | 
+      <span><%= link_to 'Edit', edit_article_path(article) %></span> | 
+      <span><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"}  %></span>
+    </p>
+
+  </div>
+<% end %>
