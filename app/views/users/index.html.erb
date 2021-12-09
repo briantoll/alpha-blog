@@ -7,9 +7,13 @@
     <div><%= pluralize(user.articles.count, "article") %></div>
     <small>Joined: <%= time_ago_in_words(user.created_at) %></small>
     <p>
-      <span><%= link_to 'View Profile', user_path(user) %></span> | 
-      <span><%= link_to 'Edit Profile', edit_user_path(user) %></span> | 
-      <span><%= link_to 'Delete User', user_path(user), method: :delete, data: {confirm: "Are you sure?"}  %></span>
+      <span><%= link_to 'View Profile', user_path(user) %></span>
+      <% if logged_in? && user == current_user %>
+        | 
+        <span><%= link_to 'Edit Profile', edit_user_path(user) %></span>
+        | 
+        <span><%= link_to 'Delete User', user_path(user), method: :delete, data: {confirm: "Are you sure?"}  %></span>
+      <% end %>
     </p>
     <hr>
 
