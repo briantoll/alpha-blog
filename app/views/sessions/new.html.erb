@@ -1,15 +1,10 @@
+<h1>Log in to Alpha Blog</h1>
+
 <div>
   <div>
     <div>
-      <%= render 'shared/errors', obj: @user %>
-      <%= form_with(model: @user, local: true) do |f| %>
-        <div>
-          <%= f.label :user %>
-          <div>
-            <%= f.text_field :username, placeholder: "Username" %>
-          </div>
-        </div>
-
+      <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
+        
         <div>
           <%= f.label :email %>
           <div> 
@@ -25,7 +20,7 @@
         </div>
 
         <div>
-          <%= f.submit(@user.new_record? ? "Sign Up" : "Update User") %>
+          <%= f.submit "Sign Up" %>
         </div>
       <% end %>
     </div>
