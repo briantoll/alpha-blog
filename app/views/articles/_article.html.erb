@@ -9,7 +9,7 @@
     <small>Created: <%= article.created_at %></small>
     <p>
       <span><%= link_to 'View', article_path(article) %></span>
-      <% if logged_in? && article.user == current_user %>
+      <% if logged_in? && (article.user == current_user || current_user.admin?) %>
         | 
         <span><%= link_to 'Edit', edit_article_path(article) %></span>
         | 

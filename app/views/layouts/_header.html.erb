@@ -10,6 +10,7 @@
       <span style="float: right">
         <% if logged_in? %>
           <%= link_to 'New Post', new_article_path %>
+          <%= "Admin -" if current_user.admin? %>
           <%= link_to current_user.username, user_path(current_user) %>
           <%= link_to 'Logout', logout_path, method: :delete %>
         <% else %>  
