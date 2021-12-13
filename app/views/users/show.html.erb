@@ -4,7 +4,7 @@
 
 <% if logged_in? && (@user == current_user || current_user.admin?) %>
   <%= link_to "Edit your profile", edit_user_path(@user) %>
-  <%= link_to "Delete your accout", user_path(current_user), method: :delete, data: { confirm: "Are you sure?" }, sytle: "color:red"  %>
+  <%= link_to "Delete your accout", user_path(current_user), method: :delete, data: { confirm: "Are you sure?" }, style: "color:red"  %>
 <% end %>
 
 <h2><%= @user.username %>'s Articles</h2>

@@ -12,7 +12,7 @@
         | 
         <span><%= link_to 'Edit Profile', edit_user_path(user) %></span>
         | 
-        <span><%= link_to 'Delete User', user_path(user), method: :delete, data: {confirm: "Are you sure?"}  %></span>
+        <span><%= link_to 'Delete User', user_path(user), method: :delete, data: {confirm: "Are you sure?"}, style: "color:red"  %></span>
       <% end %>
     </p>
     <hr>
