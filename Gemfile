@@ -6,6 +6,8 @@ ruby '3.0.2'
 ## Gemfile for Rails 3+, Sinatra, or Merb
 gem 'will_paginate', '~> 3.3'
 
+gem 'rexml', require: false
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use Puma as the app server
