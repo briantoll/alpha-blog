@@ -12,8 +12,16 @@
 
         <div>
           <%= f.label :description %>
-          <div class="col-10"> 
+          <div>
             <%= f.text_area :description, rows: 10, placeholder: "Description of article" %>
+          </div>
+        </div>
+
+        <div>
+          <%= f.label :categories %>
+          <div>
+            <%= f.collection_select(:category_ids, Category.all, :id, :name, 
+            { prompt: "Make Your Selections (Not Required)" }, { multiple: true, size: 8 }) %>
           </div>
         </div>
 

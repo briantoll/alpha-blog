@@ -4,6 +4,9 @@
     <% if article.user %>
       <small>by <%= link_to article.user.username, user_path(article.user) %></small>
     <% end %>
+    <% if article.categories.any? %>
+      <%= render article.categories %>
+    <% end %>
     <p><%= article.description %></p>
     <small>Updated <%= time_ago_in_words(article.updated_at) %> ago</small><br>
     <small>Created: <%= article.created_at %></small>
