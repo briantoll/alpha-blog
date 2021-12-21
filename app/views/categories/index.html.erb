@@ -10,5 +10,7 @@
 <% end %>
 
 <p>
-  <%= link_to 'Create New Category', new_category_path %>
+  <% if logged_in? && current_user.admin? %>
+    <%= link_to 'Create New Category', new_category_path %>
+  <% end %>
 </p>
